@@ -1,0 +1,118 @@
+[class*="__site-container"] {
+  width: 100%;
+  max-width: calc(var(--max-container-width) + 2 * var(--content-padding));
+  margin: 0 auto;
+  padding-inline: var(--content-padding);
+
+  @supports (width: max(20vw, 100px)) {
+    padding-left: max(env(safe-area-inset-left, 1.4rem),
+        var(--content-padding));
+    padding-right: max(env(safe-area-inset-right, 1.4rem),
+        var(--content-padding));
+  }
+}
+
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 10px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+
+  @include breakpointMF(desktop) {
+    font-size: clamp(4px, 0.5vw, 20px);
+  }
+
+  @include aspectRatio(widthDesktop) {
+    font-size: clamp(4.2px, 0.52vw, 10px);
+  }
+
+  @include breakpointHeightSmallMobile() {
+    font-size: 8px;
+  }
+
+  @include breakpoint(supersmall-mobile) {
+    font-size: 8px;
+  }
+
+  @include noHighlight();
+}
+
+body {
+  color: var(--Text, #1A1B1C);
+  background: var(--White, #FFF);
+  font-family: var(--main-ff);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.section {
+  position: relative;
+  z-index: 500;
+
+  padding: 4rem 0;
+  background: var(--text-invert, #000);
+  scroll-snap-align: center;
+
+  &:nth-child(2) {
+    padding: 8rem 0 4rem;
+
+    @include breakpointMF(tablet) {
+      padding: 17.5rem 0;
+    }
+  }
+
+  &:last-child {
+    padding: 4rem 0 8rem;
+
+    @include breakpointMF(tablet) {
+      padding: 17.5rem 0;
+    }
+  }
+
+  @include breakpointMF(tablet) {
+    padding: 17.5rem 0;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    @include breakpointMF(tablet) {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__title {
+    @extend .text-h2;
+  }
+
+  &__text {
+    @extend .text-20;
+    text-transform: none;
+
+    &--max-width {
+      max-width: 60rem;
+    }
+  }
+
+  &__half-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.2rem;
+    margin-top: 4rem;
+
+    @include breakpointMF(tablet) {
+      flex: 0 0 50%;
+      margin-top: 0;
+    }
+  }
+}
