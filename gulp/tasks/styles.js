@@ -18,6 +18,7 @@ export const sassBuild = () => (
     .pipe(sassGlob())
     .pipe(sass({
       includePaths: ['node_modules'],
+      silenceDeprecations: ['legacy-js-api', 'import'],
     }))
     .pipe(gulpif(config.isProd, gcmq()))
     .pipe(gulpif(config.isProd, autoprefixer({

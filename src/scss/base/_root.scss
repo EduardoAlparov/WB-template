@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+:root {
+  /* layouts: */
+  --max-container-width: 192rem;
+  --content-padding: 5.5rem;
+  --header-height: 17.2rem;
+
+  /* typography: */
+  --main-ff: "CoFo Sans", sans-serif;
+
+  --ff-primary: system-ui, sans-serif;
+
+  @each $key, $value in $font-sizes {
+    --fs-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $font-weights {
+    --fw-#{$key}: #{$value};
+  }
+
+  /* colors: */
+  --color-dark: #333;
+  --color-bg: #EFF2F6;
+  --color-bg-2: #F5F5F7;
+  --color-white: #fff;
+
+  @each $key, $value in $colors {
+    --clr-#{$key}: #{$value};
+  }
+}

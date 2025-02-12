@@ -1,0 +1,24 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.grid-flow {
+  display: grid;
+  gap: 1rem;
+}
+
+[class*="__site-container"] {
+  width: 100%;
+  max-width: calc(var(--max-container-width) + 2 * var(--content-padding));
+  margin: 0 auto;
+  padding-inline: var(--content-padding);
+
+  @supports (width: max(20vw, 100px)) {
+    padding-left: max(env(safe-area-inset-left, 1.4rem),
+        var(--content-padding));
+    padding-right: max(env(safe-area-inset-right, 1.4rem),
+        var(--content-padding));
+  }
+}

@@ -1,3 +1,8 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default () => {
     const triggers = document.querySelectorAll('.js-animation-trigger');
     const isMobile = window.matchMedia('(max-width: 992px)').matches;

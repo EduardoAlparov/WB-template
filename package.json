@@ -88,7 +88,15 @@
 		"vinyl-source-stream": "^2.0.0"
 	},
 	"dependencies": {
+		"@fancyapps/ui": "5.0.36",
+		"body-scroll-lock": "4.0.0-beta.0",
+		"choices.js": "11.0.3",
+		"detect-it": "4.0.1",
 		"gsap": "3.12.5",
+		"inputmask": "5.0.9",
+		"jquery": "3.7.1",
+		"nouislider": "15.8.1",
+		"plyr": "3.7.8",
 		"reset-css": "^5.0.1",
 		"swiper": "11.1.9",
 		"vanilla-lazyload": "^17.6.1"
